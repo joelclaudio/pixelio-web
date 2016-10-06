@@ -162,6 +162,11 @@ hr.small {
     -o-background-size: cover;
 }
 
+h1{
+    color:#ea282e;
+    font-size: 12.5em !important;
+}
+
 .text-vertical-center {
     background-color: #fdcf1a;
 }
