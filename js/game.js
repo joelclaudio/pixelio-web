@@ -5,13 +5,13 @@ document.body.appendChild(renderer.view);
 var stage = new PIXI.Container();
 
 /* map.js */
-//stage.addChild(getPlant1());
 stage.addChild(getPlant());
 
 /* player.js */
 stage.addChild(getPlayer());
 
 /* ui.js */
+//stage.addChild(getTopBar());
 
 var socket = null;
          var isopen = false;
