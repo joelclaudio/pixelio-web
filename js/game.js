@@ -33,7 +33,7 @@ stage.addChild(player);
 var socket = null;
          var isopen = false;
          window.onload = function() {
-            socket = new WebSocket("ws://88.157.229.216:9000");
+            socket = new WebSocket("ws://88.157.238.12:9000");
             socket.binaryType = "arraybuffer";
             socket.onopen = function() {
                console.log("Connected!");
