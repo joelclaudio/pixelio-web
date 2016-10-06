@@ -1,8 +1,15 @@
 function getPlayer() {
-    var player = new PIXI.Graphics();
-    player.lineStyle(0);
-    player.beginFill(0xFFF000, 1);
-    player.drawCircle(470, 290, 60);
-    player.endFill();
+    
+    var texture = PIXI.Texture.fromImage('./img/player.jpg');
+
+    // create a new Sprite using the texture
+    var player = new PIXI.Sprite(texture);
+
+    player.position.x = 250;
+    player.position.y = 50;
+
+    player.interactive = true;
+
+
     return player;
 }
