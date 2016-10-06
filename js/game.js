@@ -5,8 +5,8 @@ document.body.appendChild(renderer.view);
 var stage = new PIXI.Container();
 
 /* map.js */
-stage.addChild(getPlant1());
-stage.addChild(getPlant2());
+//stage.addChild(getPlant1());
+stage.addChild(getPlant());
 
 /* player.js */
 stage.addChild(getPlayer());

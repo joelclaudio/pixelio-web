@@ -11,11 +11,16 @@ function getPlant1() {
 }
 
 
-function getPlant2() {
-    var plant2 = new PIXI.Graphics();
-    plant2.lineStyle(2, 0xFF0000, 1);
-    plant2.beginFill(0xFF00BB, 0.25);
-    plant2.drawRect(25, 50, 250, 350);
-    plant2.endFill();
-    return plant2;
+function getPlant() {
+    // create a texture from an image path
+    var texture = PIXI.Texture.fromImage('./img/map_rasterized.png');
+
+    // create a new Sprite using the texture
+    var map = new PIXI.Sprite(texture);
+
+    map.position.x = 50;
+    map.position.y = 50;
+
+
+    return map;
 }
