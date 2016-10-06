@@ -4,31 +4,14 @@ document.body.appendChild(renderer.view);
 // create the root of the scene graph
 var stage = new PIXI.Container();
 
-// create a texture from an image path
-var plant = new PIXI.Graphics();
-plant.lineStyle(2, 0xFF0000, 1);
-plant.beginFill(0xFF00BB, 0.25);
-plant.drawRect(275, 50, 500, 450);
-plant.endFill();
+/* map.js */
+stage.addChild(getPlant1());
+stage.addChild(getPlant2());
 
-var plant2 = new PIXI.Graphics();
-plant2.lineStyle(2, 0xFF0000, 1);
-plant2.beginFill(0xFF00BB, 0.25);
-plant2.drawRect(25, 50, 250, 350);
-plant2.endFill();
+/* player.js */
+stage.addChild(getPlayer());
 
-var player = new PIXI.Graphics();
-player.lineStyle(0);
-player.beginFill(0xFFFF0B, 0.5);
-player.drawCircle(470, 290,60);
-player.endFill();
-
-
-stage.addChild(plant);
-stage.addChild(plant2);
-
-stage.addChild(player);
-
+/* ui.js */
 
 var socket = null;
          var isopen = false;
