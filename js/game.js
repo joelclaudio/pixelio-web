@@ -11,7 +11,8 @@ stage.addChild(getPlant());
 stage.addChild(getPlayer());
 
 /* ui.js */
-//stage.addChild(getTopBar());
+stage.addChild(getTopBarScoreBackground());
+stage.addChild(getTopBarScoreText(1552));
 
 var socket = null;
          var isopen = false;
