@@ -4,20 +4,52 @@ document.body.appendChild(renderer.view);
 // create the root of the scene graph
 var stage = new PIXI.Container();
 
+//add food
+var foodPositions = [];
+var foods = [];
+for (var i = 0; i < 100; i++) {
+    foodPositions.push({
+        x: Math.random() * (1200 - 0) + 0,
+        y: Math.random() * (700 - 0) + 0,
+    });
+}
+
+for (var i = 0; i < foodPositions.length; i++) {
+    var food = getFood(foodPositions[i].x, foodPositions[i].y)
+    stage.addChild(food);
+    foods.push(food);
+}
+
+
+//add players
+var playersPositions = [];
+var players = [];
+for (var i = 0; i < 30; i++) {
+    playersPositions.push({
+        x: Math.random() * (1200 - 0) + 0,
+        y: Math.random() * (700 - 0) + 0,
+    });
+}
+
+for (var i = 0; i < playersPositions.length; i++) {
+    var player = getPlayer(playersPositions[i].x, playersPositions[i].y, Math.random() * (2 - 0.4) + 0.4)
+    stage.addChild(player);
+    players.push(player);
+}
+
 /* map.js */
 stage.addChild(getPlant());
 
-/* player.js */
-var player = getPlayer();
-stage.addChild(player);
+//move players
+function movePlayers () {
 
-/* ui.js */
-//stage.addChild(getTopBar());
-
-function movePlayer () {
-    player.position.x += Math.random() * (-10 - 10) + 10;
-    player.position.y += Math.random() * (-10 - 10) + 10;
+    for (var i = 0; i < players.length; i++) {
+        players[i].position.x += Math.random() * (-10 - 10) + 10;
+        players[i].position.y += Math.random() * (-10 - 10) + 10;
+    }
+    
 }
+
 
 
 var socket = null;
@@ -31,7 +63,7 @@ var socket = null;
             }
             socket.onmessage = function(e) {
                if (typeof e.data == "string") {
-                   movePlayer();
+                   movePlayers();
                   console.log("Text message received: " + e.data);
                } else {
                   var arr = new Uint8Array(e.data);
