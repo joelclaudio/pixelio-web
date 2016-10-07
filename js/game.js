@@ -8,16 +8,23 @@ var stage = new PIXI.Container();
 stage.addChild(getPlant());
 
 /* player.js */
-stage.addChild(getPlayer());
+var player = getPlayer();
+stage.addChild(player);
 
 /* ui.js */
 stage.addChild(getTopBarScoreBackground());
 stage.addChild(getTopBarScoreText(1552));
 
+function movePlayer () {
+    player.position.x += Math.random() * (-10 - 10) + 10;
+    player.position.y += Math.random() * (-10 - 10) + 10;
+}
+
+
 var socket = null;
          var isopen = false;
          window.onload = function() {
-            socket = new WebSocket("ws://88.157.238.12:9000");
+            socket = new WebSocket("ws://88.157.229.216:9000/?id=1234");
             socket.binaryType = "arraybuffer";
             socket.onopen = function() {
                console.log("Connected!");
@@ -25,6 +32,7 @@ var socket = null;
             }
             socket.onmessage = function(e) {
                if (typeof e.data == "string") {
+                   movePlayer();
                   console.log("Text message received: " + e.data);
                } else {
                   var arr = new Uint8Array(e.data);
