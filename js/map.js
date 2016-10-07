@@ -5,8 +5,8 @@ function getPlant() {
     // create a new Sprite using the texture
     var map = new PIXI.Sprite(texture);
 
-    map.position.x = 50;
-    map.position.y = 50;
+    map.position.x = 0;
+    map.position.y = 0;
 
 
     return map;

@@ -47,9 +47,11 @@ function movePlayers () {
         players[i].position.x += Math.random() * (-10 - 10) + 10;
         players[i].position.y += Math.random() * (-10 - 10) + 10;
     }
-    
 }
-
+    
+/* ui.js */
+stage.addChild(getTopBarScoreBackground());
+stage.addChild(getTopBarScoreText(1552));
 
 
 var socket = null;
