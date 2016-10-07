@@ -15,8 +15,7 @@ function getTopBarScoreBackground() {
 function getTopBarScoreText(value) {
 
     var basicText = new PIXI.Text(value +"",{
-        fontFamily: 'VT323',
-        fontSize: "24px",
+        font: "bold 24px 'Press Start 2P'",
         fill : 0xff1010,  
     });
     

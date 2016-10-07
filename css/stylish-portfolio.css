@@ -12,9 +12,11 @@ body {
     height: 100%;
 }
 
+/*
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+*/
 
 .text-vertical-center {
     display: table-cell;
@@ -25,7 +27,6 @@ body {
 .text-vertical-center h1 {
     margin: 0;
     padding: 0;
-    font-size: 4.5em;
     font-weight: 700;
 }
 
@@ -164,7 +165,12 @@ hr.small {
 
 h1{
     color:#ea282e;
-    font-size: 12.5em !important;
+    /*font-size: 12.5em !important;*/
+    font-size: 44px;
+}
+
+h3{
+    font-size: 20px;
 }
 
 .text-vertical-center {
